@@ -76,6 +76,19 @@ if (track && hint) {
   }, { passive: true });
 }
 
+// ============ WHATSAPP CTA — FIRE META PIXEL AddToCart EVENT ============
+document.querySelectorAll('a[href*="wa.link"], a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(a => {
+  a.addEventListener('click', () => {
+    if (typeof fbq === 'function') {
+      fbq('track', 'AddToCart', {
+        content_name: 'Book Meeting - WhatsApp CTA',
+        content_category: 'Consulting',
+        source: 'sistem-tumbuh-landing'
+      });
+    }
+  });
+});
+
 // ============ BOOK MEETING MODAL ============
 // Web3Forms integration — submissions go to omarsuyufw@gmail.com
 const W3F_ENDPOINT = 'https://api.web3forms.com/submit';

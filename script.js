@@ -77,7 +77,7 @@ if (track && hint) {
 }
 
 // ============ WHATSAPP CTA — FIRE META PIXEL AddToCart EVENT ============
-document.querySelectorAll('a[href*="wa.link"], a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(a => {
+document.querySelectorAll('a[href*="wa.link"], a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="gass.my.id/cta"]').forEach(a => {
   a.addEventListener('click', () => {
     if (typeof fbq === 'function') {
       fbq('track', 'AddToCart', {
